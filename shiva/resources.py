@@ -483,6 +483,30 @@ class ShowsResource(Resource):
                           self.get_resource_fields())
 
 
+class UserResource(Resource):
+    """
+    """
+
+    def get_resource_fields(self):
+        return {
+            'id': fields.String,
+            'email': fields.String,
+        }
+
+    def get(self, user_id=None, user_slug=None):
+        if not user_id and not user_slug:
+            abort(404)
+
+        user = None
+
+        if user_id:
+            user = self.get_one(user_id)
+        elif user_slug:
+            user = self.get_by_slug(user_slug)
+
+        return marshal(user, self.get_resource_fields())
+
+
 class RandomResource(Resource):
     """ Retrieves a random instance of a specified resource. """
 

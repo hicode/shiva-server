@@ -208,3 +208,18 @@ class LyricsCache(db.Model):
 
     def __repr__(self):
         return "<LyricsCache ('%s')>" % self.track.title
+
+
+class User(db.Model):
+    """
+    """
+
+    __tablename__ = 'users'
+
+    pk = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(256), unique=True)
+    slug = db.Column(db.String(256), unique=True)
+    email = db.Column(db.String(256), unique=True)
+
+    def __repr__(self):
+        return "<User ('%s')>" % self.username

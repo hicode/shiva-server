@@ -1188,6 +1188,14 @@ against it. If they match, a header is added:
     Access-Control-Allow-Origin: http://napster.com
 
 
+Need help?
+==========
+
+If you encounter problems with the software please `file a bug <#bug-reports>`_
+or drop by #shiva-server in `freenode <http://en.wikipedia.org/wiki/Freenode>`_
+and tell us what is going on.
+
+
 Want to contribute?
 ===================
 
